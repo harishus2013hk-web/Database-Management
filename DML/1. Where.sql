@@ -39,3 +39,28 @@ WHERE age > 18 AND city = 'Agra';
 -- Select the record where id equals 3
 SELECT * FROM personal 
 WHERE id = 3;
+
+-- 1. Update phone number for Ram Kumar
+UPDATE personal
+SET phone = '9999999999'
+WHERE name = 'Ram Kumar';
+
+-- 2. Change city to 'Mumbai' for people from Bhopal
+UPDATE personal
+SET city = 'Mumbai'
+WHERE city = 'Bhopal';
+
+-- 3. Increase age by 1 for everyone in Agra
+UPDATE personal
+SET age = age + 1
+WHERE city = 'Agra';
+
+-- 4. Set default city to 'Delhi' for missing city values (if any)
+UPDATE personal
+SET city = 'Delhi'
+WHERE city IS NULL;
+
+-- 5. Add prefix 'Mr.' to all male names
+UPDATE personal
+SET name = CONCAT('Mr. ', name)
+WHERE gender = 'M';
